@@ -1,0 +1,446 @@
+/* Color Variables */
+:root {
+    --light-blue: #87CEEB;
+    --butter-yellow: #F0E68C;
+    --light-blue-dark: #6BB6D6;
+    --butter-yellow-dark: #DAC76A;
+    --white: #FFFFFF;
+    --dark-gray: #333333;
+    --light-gray: #F8F9FA;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--butter-yellow) 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(45deg, var(--light-blue), var(--butter-yellow));
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    background-size: 50px 50px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+    padding: 3rem 0;
+    background: var(--light-gray);
+}
+
+/* Introduction Section */
+.intro-section {
+    margin-bottom: 3rem;
+}
+
+.intro-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 3px solid var(--butter-yellow);
+}
+
+.intro-icon {
+    font-size: 3rem;
+    color: var(--light-blue);
+    margin-bottom: 1rem;
+}
+
+.intro-card h2 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.intro-card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Tutorial Section */
+.tutorial-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px var(--shadow);
+}
+
+.steps-container {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.step-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--light-blue);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-hover);
+}
+
+.step-card:nth-child(even) {
+    border-left-color: var(--butter-yellow);
+}
+
+.step-header {
+    background: linear-gradient(45deg, var(--light-blue), var(--light-blue-dark));
+    padding: 1.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-card:nth-child(even) .step-header {
+    background: linear-gradient(45deg, var(--butter-yellow), var(--butter-yellow-dark));
+    color: var(--dark-gray);
+}
+
+.step-number {
+    background: var(--white);
+    color: var(--light-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.step-card:nth-child(even) .step-number {
+    color: var(--butter-yellow-dark);
+}
+
+.step-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.step-content {
+    padding: 2rem;
+}
+
+.step-content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.materials-list,
+.instruction-list {
+    list-style: none;
+    padding: 0;
+}
+
+.materials-list li,
+.instruction-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.materials-list li:last-child,
+.instruction-list li:last-child {
+    border-bottom: none;
+}
+
+.materials-list i {
+    color: var(--light-blue);
+    font-size: 0.9rem;
+}
+
+.instruction-list li::before {
+    content: "→";
+    color: var(--butter-yellow-dark);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Tips Section */
+.tips-section {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 3px solid var(--light-blue);
+}
+
+.tips-section h3 {
+    text-align: center;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.tips-section i {
+    color: var(--butter-yellow-dark);
+    margin-right: 0.5rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, var(--light-blue), var(--light-blue-dark));
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: scale(1.05);
+}
+
+.tip-card:nth-child(even) {
+    background: linear-gradient(135deg, var(--butter-yellow), var(--butter-yellow-dark));
+    color: var(--dark-gray);
+}
+
+.tip-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: inherit;
+}
+
+.tip-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.sketchbook-section {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.sketchbook-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sketchbook-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.handwritten {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    color: var(--dark-gray);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    transform: rotate(-5deg);
+    opacity: 0.8;
+}
+
+.footer-info {
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    opacity: 0.8;
+}
+
+/* Progress Bar */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--light-blue), var(--butter-yellow));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .intro-card,
+    .step-content,
+    .tips-section {
+        padding: 1.5rem;
+    }
+    
+    .step-header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sketchbook-image {
+        max-width: 250px;
+    }
+    
+    .handwritten {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .step-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .intro-card,
+    .step-content,
+    .tips-section {
+        padding: 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Print Styles */
+@media print {
+    .progress-container {
+        display: none;
+    }
+    
+    .step-card {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .header {
+        background: var(--light-blue);
+        color: black;
+    }
+}

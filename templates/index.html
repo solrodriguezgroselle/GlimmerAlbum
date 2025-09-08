@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLIMMER - Photo Album Tutorial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">GLIMMER</h1>
+            <p class="subtitle">Create Your Perfect Photo Album</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <div class="intro-card">
+                    <i class="fas fa-camera-retro intro-icon"></i>
+                    <h2>Welcome to Your Photo Album Journey!</h2>
+                    <p>Follow our step-by-step guide to create a beautiful, personalized photo album that will preserve your precious memories for years to come.</p>
+                </div>
+            </section>
+
+            <!-- Tutorial Steps -->
+            <section class="tutorial-section">
+                <h2 class="section-title">Step-by-Step Instructions</h2>
+                
+                <div class="steps-container">
+                    <!-- Step 1 -->
+                    <div class="step-card" data-step="1">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3>Gather Your Materials</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Before we begin, collect all the materials you'll need:</p>
+                            <ul class="materials-list">
+                                <li><i class="fas fa-check"></i> Photo album or scrapbook (8.5" x 11" recommended)</li>
+                                <li><i class="fas fa-check"></i> Your favorite printed photos</li>
+                                <li><i class="fas fa-check"></i> Decorative paper and cardstock</li>
+                                <li><i class="fas fa-check"></i> Glue sticks or photo-safe adhesive</li>
+                                <li><i class="fas fa-check"></i> Scissors and craft knife</li>
+                                <li><i class="fas fa-check"></i> Colored pens and markers</li>
+                                <li><i class="fas fa-check"></i> Decorative stickers and embellishments</li>
+                                <li><i class="fas fa-check"></i> Ruler and pencil</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card" data-step="2">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3>Plan Your Layout</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Organization is key to a beautiful photo album:</p>
+                            <ul class="instruction-list">
+                                <li>Sort your photos by theme, date, or event</li>
+                                <li>Decide on a chronological or thematic arrangement</li>
+                                <li>Sketch rough layouts on paper before committing</li>
+                                <li>Consider leaving space for journaling and decorations</li>
+                                <li>Plan for 2-4 photos per page to avoid overcrowding</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card" data-step="3">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3>Create Background Designs</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Add personality with custom backgrounds:</p>
+                            <ul class="instruction-list">
+                                <li>Cut decorative paper to fit each page</li>
+                                <li>Create borders using patterned paper strips</li>
+                                <li>Use stamps or stencils for repeated motifs</li>
+                                <li>Layer different textures for visual interest</li>
+                                <li>Keep backgrounds subtle so photos remain the focus</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card" data-step="4">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h3>Mount Your Photos</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Properly secure your photos for longevity:</p>
+                            <ul class="instruction-list">
+                                <li>Use photo-safe, acid-free adhesive only</li>
+                                <li>Create photo mats using contrasting cardstock</li>
+                                <li>Leave small borders around each photo</li>
+                                <li>Align photos using a ruler for neat presentation</li>
+                                <li>Consider using photo corners for removable mounting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step-card" data-step="5">
+                        <div class="step-header">
+                            <div class="step-number">5</div>
+                            <h3>Add Journaling and Captions</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Bring your memories to life with words:</p>
+                            <ul class="instruction-list">
+                                <li>Write dates, locations, and names of people</li>
+                                <li>Include short stories or funny anecdotes</li>
+                                <li>Use consistent handwriting or printed labels</li>
+                                <li>Leave white space around text for readability</li>
+                                <li>Consider using speech bubbles for quotes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="step-card" data-step="6">
+                        <div class="step-header">
+                            <div class="step-number">6</div>
+                            <h3>Embellish and Decorate</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Add the finishing touches that make it special:</p>
+                            <ul class="instruction-list">
+                                <li>Use stickers that match your theme</li>
+                                <li>Add ribbon, buttons, or small embellishments</li>
+                                <li>Create title banners for each section</li>
+                                <li>Use washi tape for colorful borders</li>
+                                <li>Remember: less is often more!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div class="step-card" data-step="7">
+                        <div class="step-header">
+                            <div class="step-number">7</div>
+                            <h3>Final Review and Protection</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Ensure your album will last for generations:</p>
+                            <ul class="instruction-list">
+                                <li>Check that all adhesive is fully dry</li>
+                                <li>Ensure no elements are loose or peeling</li>
+                                <li>Add page protectors if desired</li>
+                                <li>Create a beautiful cover page with title and date</li>
+                                <li>Store in a cool, dry place away from direct sunlight</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="tips-section">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tips for Success</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <i class="fas fa-palette"></i>
+                            <h4>Color Coordination</h4>
+                            <p>Stick to 2-3 main colors throughout your album for a cohesive look.</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Take Your Time</h4>
+                            <p>Don't rush the process. Enjoy creating something beautiful and meaningful.</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-heart"></i>
+                            <h4>Make it Personal</h4>
+                            <p>Include personal touches like ticket stubs, pressed flowers, or handwritten notes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Sketchbook Image -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="sketchbook-section">
+                    <img src="https://pixabay.com/get/gb2141bbcce5802a7b4f463dfb58c3133cbe82c761992c7dca2ff744cb6ac86e53bff8b3c9ba82142a04ce1c90e42f1b9f04756893234e76d3bf91903cc5d370c_1280.jpg" alt="Sketchbook with pencil writing" class="sketchbook-image">
+                    <div class="sketchbook-text">
+                        <p class="handwritten">diseña tu mundo</p>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2025 GLIMMER. Create beautiful memories, one page at a time.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progress Indicator -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
