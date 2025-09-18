@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initStepInteractions();
     initSmoothScrolling();
     
-    console.log('GLIMMER tutorial loaded successfully!');
+    console.log('¡Tutorial GLIMMER cargado exitosamente!');
     
     /**
      * Progress Bar - Shows reading progress
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ">
                 <i class="fas fa-trophy" style="font-size: 3rem; margin-bottom: 1rem; color: gold;"></i>
                 <h3 style="margin-bottom: 1rem;">¡Felicitaciones!</h3>
-                <p style="margin-bottom: 1.5rem;">You've completed all the steps! Your beautiful photo album awaits.</p>
+                <p style="margin-bottom: 1.5rem;">¡Has completado todos los pasos! Tu hermoso álbum de fotos te espera.</p>
                 <button onclick="this.parentElement.parentElement.remove()" style="
                     background: white;
                     color: var(--dark-gray);
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     border-radius: 25px;
                     cursor: pointer;
                     font-weight: bold;
-                ">Continue Creating!</button>
+                ">¡Sigue Creando!</button>
             </div>
             <div style="
                 position: fixed;
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadSavedProgress() {
         const savedProgress = localStorage.getItem('glimmerProgress');
         if (savedProgress) {
-            console.log(`Loaded saved progress: ${savedProgress}%`);
+            console.log(`Progreso guardado cargado: ${savedProgress}%`);
         }
     }
     
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initPrintFeature() {
         const printButton = document.createElement('button');
         printButton.className = 'print-button';
-        printButton.innerHTML = '<i class="fas fa-print"></i> Print Guide';
+        printButton.innerHTML = '<i class="fas fa-print"></i> Imprimir Guía';
         printButton.style.cssText = `
             position: fixed;
             bottom: 2rem;
