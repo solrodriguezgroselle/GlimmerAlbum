@@ -1,16 +1,16 @@
-/* Vintage Magazine Color Variables */
+/* Custom Color Variables */
 :root {
-    --vintage-burgundy: #6B2C3E;
-    --vintage-cream: #F4F1E8;
-    --vintage-gold: #D4A574;
-    --vintage-brown: #8B4513;
+    --vintage-burgundy: #B44840;
+    --vintage-cream: #FFFAF0;
+    --vintage-gold: #D8948A;
+    --vintage-brown: #A26769;
     --vintage-black: #2C2C2C;
     --vintage-gray: #666;
-    --paper-white: #FEFAF7;
-    --sepia-tone: #F5E6D3;
-    --vintage-shadow: rgba(43, 32, 26, 0.15);
-    --vintage-shadow-dark: rgba(43, 32, 26, 0.25);
-    --border-color: #D4A574;
+    --paper-white: #FFFAF0;
+    --sepia-tone: #FFFAF0;
+    --vintage-shadow: rgba(180, 72, 64, 0.15);
+    --vintage-shadow-dark: rgba(180, 72, 64, 0.25);
+    --border-color: #D8948A;
 }
 
 /* Reset and Base Styles */
