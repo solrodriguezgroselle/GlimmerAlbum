@@ -1,12 +1,12 @@
 /* Color Variables */
 :root {
-    --light-blue: #87CEEB;
-    --butter-yellow: #F0E68C;
-    --light-blue-dark: #6BB6D6;
-    --butter-yellow-dark: #DAC76A;
+    --light-blue: #B44840;
+    --butter-yellow: #D8948A;
+    --light-blue-dark: #A26769;
+    --butter-yellow-dark: #FFFAF0;
     --white: #FFFFFF;
     --dark-gray: #333333;
-    --light-gray: #F8F9FA;
+    --light-gray: #FFFAF0;
     --shadow: rgba(0, 0, 0, 0.1);
     --shadow-hover: rgba(0, 0, 0, 0.15);
 }
