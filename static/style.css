@@ -1,14 +1,16 @@
-/* Color Variables */
+/* Vintage Magazine Color Variables */
 :root {
-    --light-blue: #B44840;
-    --butter-yellow: #D8948A;
-    --light-blue-dark: #A26769;
-    --butter-yellow-dark: #FFFAF0;
-    --white: #FFFFFF;
-    --dark-gray: #333333;
-    --light-gray: #FFFAF0;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --shadow-hover: rgba(0, 0, 0, 0.15);
+    --vintage-burgundy: #6B2C3E;
+    --vintage-cream: #F4F1E8;
+    --vintage-gold: #D4A574;
+    --vintage-brown: #8B4513;
+    --vintage-black: #2C2C2C;
+    --vintage-gray: #666;
+    --paper-white: #FEFAF7;
+    --sepia-tone: #F5E6D3;
+    --vintage-shadow: rgba(43, 32, 26, 0.15);
+    --vintage-shadow-dark: rgba(43, 32, 26, 0.25);
+    --border-color: #D4A574;
 }
 
 /* Reset and Base Styles */
@@ -19,17 +21,45 @@
 }
 
 body {
-    font-family: 'Garet', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-gray);
-    background: linear-gradient(135deg, var(--light-blue) 0%, var(--butter-yellow) 100%);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    line-height: 1.7;
+    color: var(--vintage-black);
+    background: var(--sepia-tone);
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(107, 44, 62, 0.03) 0%, transparent 50%);
     min-height: 100vh;
+    text-align: justify;
+    hyphens: auto;
+    word-break: break-word;
 }
 
-/* Typography - Apply Playfair Display to all headings */
+/* Vintage Magazine Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
+}
+
+/* Column break protection */
+.intro-card p,
+.step-content p,
+.instruction-list li,
+.materials-list li,
+.step-content h3 {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+/* Magazine-style drop cap for intro */
+.intro-card p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    float: left;
+    margin: 0.1em 0.1em 0 0;
+    color: var(--vintage-burgundy);
+    text-shadow: 2px 2px 0 var(--vintage-gold);
 }
 
 .container {
@@ -38,12 +68,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
-/* Header Styles */
+/* Vintage Magazine Header */
 .header {
-    background: linear-gradient(45deg, var(--light-blue), var(--butter-yellow));
-    padding: 2rem 0;
+    background: var(--paper-white);
+    padding: 3rem 0 2rem;
     text-align: center;
-    box-shadow: 0 4px 15px var(--shadow);
+    border-bottom: 3px double var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -52,39 +82,72 @@ h1, h2, h3, h4, h5, h6 {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-    background-size: 50px 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: var(--vintage-gold);
+    box-shadow: 0 10px 0 var(--vintage-gold), 0 -10px 0 var(--vintage-gold);
+}
+
+.header::after {
+    content: '✦';
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--vintage-gold);
+    font-size: 1.5rem;
 }
 
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
     font-style: italic;
-    color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--vintage-burgundy);
+    text-shadow: 1px 1px 0 var(--vintage-gold);
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
-    letter-spacing: 2px;
+    letter-spacing: 6px;
+    text-transform: lowercase;
 }
 
 .subtitle {
-    font-size: 1.3rem;
-    color: var(--white);
-    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--vintage-gray);
+    font-weight: 400;
     position: relative;
     z-index: 1;
-    opacity: 0.9;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }
 
-/* Main Content */
+/* Vintage Magazine Content */
 .main-content {
-    padding: 3rem 0;
-    background: var(--light-gray);
+    padding: 4rem 0;
+    background: var(--paper-white);
+    position: relative;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 48px,
+        rgba(212, 165, 116, 0.08) 48px,
+        rgba(212, 165, 116, 0.08) 50px
+    );
+    pointer-events: none;
 }
 
 /* Introduction Section */
@@ -93,23 +156,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro-card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 25px var(--shadow);
-    border: 3px solid var(--butter-yellow);
+    background: var(--vintage-cream);
+    padding: 3rem 2.5rem;
+    border: 2px solid var(--border-color);
+    text-align: left;
+    box-shadow: inset 0 0 20px rgba(212, 165, 116, 0.1), 0 4px 12px var(--vintage-shadow);
+    position: relative;
+    margin: 0 2rem;
+    column-count: 2;
+    column-gap: 2.5rem;
+    column-rule: 1px solid var(--vintage-gold);
+    orphans: 3;
+    widows: 3;
+}
+
+@media (max-width: 768px) {
+    .intro-card {
+        column-count: 1;
+    }
+}
+
+.intro-card::before {
+    content: '“';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--vintage-gold);
+    line-height: 1;
+}
+
+.intro-card::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--vintage-gold), transparent, var(--vintage-gold));
 }
 
 .intro-icon {
     font-size: 3rem;
-    color: var(--light-blue);
+    color: var(--vintage-burgundy);
     margin-bottom: 1rem;
 }
 
 .intro-card h2 {
     font-family: 'Playfair Display', serif;
-    color: var(--dark-gray);
+    color: var(--vintage-black);
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 700;
@@ -129,67 +224,130 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--dark-gray);
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px var(--shadow);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--vintage-burgundy);
+    margin-bottom: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--vintage-gold);
+}
+
+.section-title::after {
+    content: '♦';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--vintage-gold);
+    font-size: 1.2rem;
 }
 
 .steps-container {
     display: grid;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
+@media (max-width: 768px) {
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .step-card {
-    background: var(--white);
-    border-radius: 15px;
+    background: var(--vintage-cream);
+    border: 1px solid var(--border-color);
     overflow: hidden;
-    box-shadow: 0 6px 20px var(--shadow);
+    box-shadow: 2px 4px 8px var(--vintage-shadow);
     transition: all 0.3s ease;
-    border-left: 5px solid var(--light-blue);
+    border-left: 4px solid var(--vintage-burgundy);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top: 20px solid var(--vintage-gold);
 }
 
 .step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--shadow-hover);
+    border-left-color: var(--vintage-gold);
+    box-shadow: inset 2px 0 4px rgba(212, 165, 116, 0.2), 4px 6px 12px var(--vintage-shadow-dark);
+    background: linear-gradient(90deg, rgba(212, 165, 116, 0.08), var(--vintage-cream));
 }
 
 .step-card:nth-child(even) {
-    border-left-color: var(--butter-yellow);
+    border-left-color: var(--vintage-gold);
 }
 
 .step-header {
-    background: linear-gradient(45deg, var(--light-blue), var(--light-blue-dark));
+    background: var(--vintage-burgundy);
     padding: 1.5rem;
-    color: var(--white);
+    color: var(--paper-white);
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
+}
+
+.step-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--vintage-gold) 0px,
+        var(--vintage-gold) 10px,
+        var(--vintage-brown) 10px,
+        var(--vintage-brown) 20px
+    );
 }
 
 .step-card:nth-child(even) .step-header {
-    background: linear-gradient(45deg, var(--butter-yellow), var(--butter-yellow-dark));
-    color: var(--dark-gray);
+    background: var(--vintage-brown);
+    color: var(--paper-white);
 }
 
 .step-number {
-    background: var(--white);
-    color: var(--light-blue);
+    background: var(--vintage-cream);
+    color: var(--vintage-burgundy);
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border: 2px solid var(--vintage-gold);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 1.5rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 2px 6px var(--vintage-shadow);
 }
 
 .step-card:nth-child(even) .step-number {
-    color: var(--butter-yellow-dark);
+    color: var(--vintage-brown);
+    border-color: var(--vintage-brown);
 }
 
 .step-header h3 {
@@ -201,12 +359,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .step-content {
     padding: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 1px solid var(--vintage-gold);
+    orphans: 2;
+    widows: 2;
+}
+
+@media (max-width: 768px) {
+    .step-content {
+        column-count: 1;
+    }
 }
 
 .step-content p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
-    color: var(--dark-gray);
+    color: var(--vintage-black);
 }
 
 .materials-list,
@@ -230,37 +399,53 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .materials-list i {
-    color: var(--light-blue);
+    color: var(--vintage-burgundy);
     font-size: 0.9rem;
 }
 
 .instruction-list li::before {
     content: "→";
-    color: var(--butter-yellow-dark);
+    color: var(--vintage-gold);
     font-weight: bold;
     font-size: 1.2rem;
 }
 
 /* Tips Section */
 .tips-section {
-    background: var(--white);
+    background: var(--paper-white);
     padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px var(--shadow);
-    border: 3px solid var(--light-blue);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--vintage-shadow);
+    position: relative;
+}
+
+.tips-section::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--vintage-gold) 0px,
+        var(--vintage-gold) 8px,
+        transparent 8px,
+        transparent 16px
+    );
 }
 
 .tips-section h3 {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    color: var(--dark-gray);
+    color: var(--vintage-black);
     margin-bottom: 2rem;
     font-size: 1.8rem;
     font-weight: 700;
 }
 
 .tips-section i {
-    color: var(--butter-yellow-dark);
+    color: var(--vintage-gold);
     margin-right: 0.5rem;
 }
 
@@ -271,21 +456,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tip-card {
-    background: linear-gradient(135deg, var(--light-blue), var(--light-blue-dark));
-    color: var(--white);
+    background: var(--vintage-burgundy);
+    color: var(--paper-white);
     padding: 1.5rem;
-    border-radius: 10px;
+    border: 1px solid var(--vintage-gold);
     text-align: center;
     transition: transform 0.3s ease;
+    position: relative;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--vintage-gold);
 }
 
 .tip-card:hover {
-    transform: scale(1.05);
+    border-color: var(--vintage-gold);
+    box-shadow: inset 0 2px 4px rgba(212, 165, 116, 0.3), 2px 4px 8px var(--vintage-shadow-dark);
 }
 
 .tip-card:nth-child(even) {
-    background: linear-gradient(135deg, var(--butter-yellow), var(--butter-yellow-dark));
-    color: var(--dark-gray);
+    background: var(--vintage-cream);
+    color: var(--vintage-black);
+    border-color: var(--vintage-burgundy);
+}
+
+.tip-card:nth-child(even)::before {
+    background: var(--vintage-burgundy);
 }
 
 .tip-card i {
@@ -303,10 +505,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer Styles */
 .footer {
-    background: var(--dark-gray);
-    color: var(--white);
+    background: var(--vintage-black);
+    color: var(--paper-white);
     padding: 3rem 0 1rem;
     margin-top: 3rem;
+    border-top: 3px double var(--vintage-gold);
 }
 
 .footer-content {
@@ -338,8 +541,8 @@ h1, h2, h3, h4, h5, h6 {
 .handwritten {
     font-family: 'Brush Script MT', cursive;
     font-size: 2rem;
-    color: var(--dark-gray);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    color: var(--vintage-black);
+    text-shadow: 1px 1px 2px rgba(212, 165, 116, 0.8);
     transform: rotate(-5deg);
     opacity: 0.8;
 }
@@ -363,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--light-blue), var(--butter-yellow));
+    background: var(--vintage-gold);
     width: 0%;
     transition: width 0.3s ease;
 }
@@ -455,10 +658,16 @@ h1, h2, h3, h4, h5, h6 {
     
     body {
         background: white;
+        text-align: left;
     }
     
     .header {
-        background: var(--light-blue);
-        color: black;
+        background: var(--vintage-cream);
+        color: var(--vintage-black);
+    }
+    
+    .intro-card,
+    .step-content {
+        column-count: 1;
     }
 }
